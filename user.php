@@ -45,6 +45,12 @@ public function getAllUsers()
         return null;
 
     }
+ }
+
+    public function hapus($id){
+        $sql = "DELETE FROM $this->table WHERE id = " . $id;
+        $result = $this->conn->query($sql);
+
+        return $result;
     }
-    
 }

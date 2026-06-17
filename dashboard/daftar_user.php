@@ -10,7 +10,10 @@ $result = $user->getAllUsers();
 $daftar_user = $result->fetch_all(MYSQLI_ASSOC);
 ?>
  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <h2>Daftar User</h2>
+        <h1 class="mt-4">Daftar User</h1>
+        <hr />
+        <a href= "index.php?halaman=tambah_user_form.php"
+        class="btn btn-primary mb-3">Tambah User</a>
         <div class="table-responsive small">
           <table class="table table-striped table-sm">
             <thead>
@@ -32,7 +35,7 @@ $daftar_user = $result->fetch_all(MYSQLI_ASSOC);
                 <td><?php echo $user['email']; ?></td>
                 <td><?php echo $user['asal']; ?></td>
                 <td>
-                delete | edit
+               <a href="delete_user.php?id=<?php echo $user['id']; ?>"> delete </a>| edit
                 </td>
               </tr>
               <?php

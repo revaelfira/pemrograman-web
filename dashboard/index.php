@@ -6,6 +6,8 @@ if(!isset($_SESSION['is_logged_in'])) {
   exit;
 }
 
+$halaman = $_GET['halaman'] ?? 'daftar_user.php';
+
 ?>
 
 <!doctype html>
@@ -306,7 +308,7 @@ if(!isset($_SESSION['is_logged_in'])) {
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <a class="nav-link d-flex align-items-center gap-2" href="index.php">
                   <svg class="bi" aria-hidden="true">
                     <use xlink:href="#puzzle"></use>
                   </svg>
@@ -379,7 +381,7 @@ if(!isset($_SESSION['is_logged_in'])) {
           </div>
         </div>
       </div>
-        <?php include 'daftar_user.php'; ?>
+        <?php include $halaman; ?>
     </div>
   </div>
   <script src="../assets/dist/js/bootstrap.bundle.min.js" class="astro-vvvwv3sm"></script>
