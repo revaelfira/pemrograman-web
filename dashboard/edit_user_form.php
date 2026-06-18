@@ -21,15 +21,15 @@ include '../database.php';
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input input value="<?php echo $user_data['Email']; ?>" type="email" class="form-control" id="email" name="email" required>
+                    <input value="<?php echo $user_data['email']; ?>" type="email" class="form-control" id="email" name="email" required>
                 </div>
                 <div class="mb-3">
                     <label for="asal" class="form-label">Asal</label>
-                    <input input value="<?php echo $user_data['Asal']; ?>" type="text" class="form-control" id="asal" name="asal" required>
+                    <input value="<?php echo $user_data['asal']; ?>" type="text" class="form-control" id="asal" name="asal" required>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input input value="<?php echo $user_data['Password']; ?>" type="password" class="form-control" id="password" name="password" required>
+                    <input value="<?php echo $user_data['password']; ?>" type="password" class="form-control" id="password" name="password" required>
                 </div>
                 <input type="hidden" name="id"
                     value="<?php echo $user_data['id']; ?>">
