@@ -35,7 +35,8 @@ $daftar_user = $result->fetch_all(MYSQLI_ASSOC);
                 <td><?php echo $user['email']; ?></td>
                 <td><?php echo $user['asal']; ?></td>
                 <td>
-               <a href="delete_user.php?id=<?php echo $user['id']; ?>"> delete </a>| edit
+               <a href="delete_user.php?id=<?php echo $user['id']; ?>"> delete </a>| 
+               <a href="index.php?halaman=edit_user.php&id=<?php echo $user['id']; ?>"> edit </a>
                 </td>
               </tr>
               <?php

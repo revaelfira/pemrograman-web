@@ -6,6 +6,6 @@ $db = new Database();
 $conn = $db->koneksi();
 $user = new User($conn);
 
-$id = $GET['id'];
+$id = $_GET['id'];
 $user->hapus($id);
 header("Location: index.php");

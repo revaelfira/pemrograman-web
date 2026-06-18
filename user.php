@@ -23,34 +23,52 @@ class User
     }
 
     public function login($username, $password){
-    $sql = "SELECT * FROM " . $this->table . " WHERE username = '" .
-            $username . "' AND password = '" .
-            $password . "'";
 
-    $result = $this->conn->query($sql);
+        $sql = "SELECT * FROM " . $this->table . " WHERE username = '" . 
+        $username . "' AND password = '". 
+        $password . "'";
 
-    if(!$result->num_rows > 0){
-     return false;
+        $result = $this->conn->query($sql);
+
+        if(!$result->num_rows == 0){
+            return false;
+        }
+        return true;
     }
-    return true;
-    }
-public function getAllUsers()
+    
+    public function getAllUsers()
     {
-    $sql = "SELECT * FROM $this->table";
-    $result = $this->conn->query($sql);
+        $sql = "SELECT * FROM $this->table";
+        $result = $this->conn->query($sql);
 
-    if ($result->num_rows > 0) {
-        return $result;
-    } else {
-        return null;
-
+        if ($result->num_rows > 0) {
+            return $result;
+        } else {
+            return null;
+        }
     }
- }
 
-    public function hapus($id){
+    public function hapus($id)
+    {
         $sql = "DELETE FROM $this->table WHERE id = " . $id;
         $result = $this->conn->query($sql);
 
         return $result;
+    }
+
+    public function getUserById($id)
+    {
+        $sql = "SELECT * FROM $this->table WHERE id = " . $id;
+        $result = $this->conn->query($sql);
+
+        return $result->fetch_assoc();
+        }
+
+    public function update($id, $username, $email, $asal, $password)
+    {
+        $sql = "UPDATE $this->table SET 
+        username='". $username ."', email='". $email ."', asal='". $asal ."',
+        password='" . $password . "' WHERE id=" . $id;
+        $this->conn->query($sql);
     }
 }
